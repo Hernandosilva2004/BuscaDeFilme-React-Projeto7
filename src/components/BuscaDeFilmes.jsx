@@ -1,4 +1,4 @@
-import { useState, React } from "react";
+import { useState } from "react";
 
 
 function BuscaDeFilmes() {
@@ -17,19 +17,24 @@ function BuscaDeFilmes() {
                 setFilmes([]);
                 setErro(data.Error);
             }
-        } catch (error) {
+        } 
+        
+        catch (error) {
             console.error('Erro ao buscar filmes:', error);
             setErro('Erro ao buscar filmes. Por favor, tente novamente mais tarde.');
         }
+    }
 
         const handleChange = (event) => {
             setQuery(event.target.value);
         }
 
-        const handleSubmit = (event) => {
+        const handleSubmit = (event) => { 
             event.preventDefault();
             buscarFilmes();
         }
+        
+
 
         return (
             <>
@@ -54,6 +59,6 @@ function BuscaDeFilmes() {
             </>
         )
     }
-}
+
 
 export default BuscaDeFilmes;
